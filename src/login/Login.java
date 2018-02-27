@@ -8,14 +8,14 @@ public class Login {
 
 	public static void main(String[] args) {
 		System.setProperty("webdriver.chrome.driver","C://gurvinder//chromedriver//chromedriver.exe");
-	
-		// TODO Auto-generated method stub
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://www.facebook.com/");
 		driver.findElement(By.xpath("//input[@name='email']")).sendKeys("this is my facebook");;
 		driver.findElement(By.xpath("//input[@name='pass']")).sendKeys("hello");
 //		driver.findElement(By.xpath("//input[@value='Log In']")).click();
 		driver.findElement(By.cssSelector("input[value='Log In']")).click();
+		int size = driver.findElements(By.tagName("a")).size();
+		System.out.println("links in the page \n"+ size);
 	}
 
 }
