@@ -17,6 +17,18 @@ public class ebay {
 		System.out.println("total no of links " + size);
 		WebElement footer =driver.findElement(By.xpath(".//*[@id='glbfooter']"));
 		System.out.println ("total no footer links "+footer.findElements(By.tagName("a")).size());
+		WebElement col =driver.findElement(By.xpath("//*[@id='gf-BIG']/table/tbody/tr/td[2]/ul\r\n" + ""));
+		System.out.println("total no of links in column " +col.findElements(By.tagName("a")).size());
+		for(int i=0;i<col.findElements(By.tagName("a")).size();i++) {
+			System.out.println(col.findElements(By.tagName("a")).get(i).getText());
+			if(col.findElements(By.tagName("a")).get(i).getText().contains("Site map"))
+			{
+				col.findElements(By.tagName("a")).get(i).click();
+			}
+		}
+		
 	}
-
 }
+	
+
+

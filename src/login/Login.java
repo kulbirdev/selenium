@@ -16,6 +16,7 @@ public class Login {
 		driver.findElement(By.cssSelector("input[value='Log In']")).click();
 		int size = driver.findElements(By.tagName("a")).size();
 		System.out.println("links in the page \n"+ size);
+		driver.close();
 	}
 
 }
